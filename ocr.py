@@ -92,7 +92,8 @@ if __name__ == '__main__':
     ap.add_argument("-o", "--csv", required=True, help="csv output file to contain file db")
     ap.add_argument("-w", "--wordlist", required=True, help="wordlist to test against OCR text")
     args = vars(ap.parse_args())
-
+    if not os.path.isdir(args["dest"]):
+        os.mkdir(args["dest"])
     with open(args["csv"],mode='w',newline='') as csv_file:
         f = open(args["wordlist"], "r")
         dictionary_words = f.read().splitlines()
