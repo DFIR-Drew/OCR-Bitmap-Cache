@@ -10,7 +10,7 @@ RDP Bitmap Cache OCR Script to triage text in bitmap cache images.
 pip install pytesseract
 pip install opencv-python
 ```
-2. Download tesseract (version 4.0.0dev-20170510 tested and working)
+2. Download [Tesseract](https://digi.bib.uni-mannheim.de/tesseract/) (version [4.0.0dev-20170510](https://digi.bib.uni-mannheim.de/tesseract/tesseract-ocr-setup-4.0.0dev-20170510.exe) tested and working)
 3. Add tesseract to User path
 
 # Usage
