@@ -18,14 +18,14 @@ class ImageData():
     def process_image(self,):
         #rgb = cv2.cvtColor(denoised_img, cv2.COLOR_BGR2RGB)
         denoised_img = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
-        results = pytesseract.image_to_data(denoised_img, output_type=Output.DICT, config='--oem 2 --psm 1 -l eng')
+        results = pytesseract.image_to_data(denoised_img, output_type=Output.DICT, config='--oem 2 --psm 1')
         return results
 
 
     def process_inverted_image(self,):
         denoised_img = cv2.cvtColor(self.image, cv2.COLOR_BGR2GRAY)
         invert_img = cv2.bitwise_not(denoised_img)
-        results = pytesseract.image_to_data(invert_img, output_type=Output.DICT, config="--oem 2 --psm 1 -l eng")
+        results = pytesseract.image_to_data(invert_img, output_type=Output.DICT, config="--oem 2 --psm 1")
         return results
 
 
