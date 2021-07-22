@@ -2,6 +2,16 @@
 RDP Bitmap Cache OCR Script to triage text in bitmap cache images.
 
 * Needs output from ANSSI bmc-tools Python script (https://github.com/ANSSI-FR/bmc-tools)
+* Requires Python3
+
+# Installation
+1. Install python packages
+```
+pip install pytesseract
+pip install opencv-python
+```
+2. Download tesseract (version 4.0.0dev-20170510 tested and working)
+3. Add tesseract to User path
 
 # Usage
 ```
