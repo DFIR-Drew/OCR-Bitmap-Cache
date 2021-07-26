@@ -102,17 +102,16 @@ if __name__ == '__main__':
         writer.writeheader()
         j = 0
         for im in os.listdir(args["source"]):
-            if os.path.isfile(im):
-                print("Processing image ",im, ": ", j + 1, "of ", len(os.listdir(args["source"])))
-                j += 1
-                img = args["source"] + "/" + im
-                imgData = ImageData(img)
-                results = imgData.process_image()
-                results2 = imgData.process_inverted_image()
-                writer_class = Result_Iter(writer)
-                writer_class.update_csv(results)
-                writer_class.update_csv(results2)
-                logging.info('Image: ' + im + " finished processing.")
+            print("Processing image ",im, ": ", j + 1, "of ", len(os.listdir(args["source"])))
+            j += 1
+            img = args["source"] + "/" + im
+            imgData = ImageData(img)
+            results = imgData.process_image()
+            results2 = imgData.process_inverted_image()
+            writer_class = Result_Iter(writer)
+            writer_class.update_csv(results)
+            writer_class.update_csv(results2)
+            logging.info('Image: ' + im + " finished processing.")
 
     total_time = time.time() - start_time
     total_min = total_time / 60
